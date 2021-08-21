@@ -1,0 +1,235 @@
+<%- include('./cabeceras/cab_resumen')%>
+
+<body onload=cargarApp()>
+    <div class="cabecero">
+        <div class="presupuesto">
+            <div class="presupuesto_titulo">
+                Resumen Financiero
+            </div>
+            <span>ID Proyecto:<div id="id_proyecto"><%= proyecto %></div></span>
+            
+            <div class="presupuesto_ingreso limpiarEstilos">
+                <div class="presupuesto_ingreso--texto">Ventas</div>
+                <div class="derecha">
+                    <div class="presupuesto_ingreso--valor" id='ingresos'>+4,000.00</div>
+                    
+                </div>
+            </div>
+            <div class="presupuesto_ingreso limpiarEstilos">
+                <div class="presupuesto_ingreso--texto">Costos</div>
+                <div class="derecha">
+                    <div class="presupuesto_ingreso--valor" id='egresos'>+4,000.00</div>
+                    
+                </div>
+            </div>
+            <div class="presupuesto_egreso limpiarEstilos">
+                <div class="presupuesto_egreso--texto">Margen</div>
+                <div class="derecha">
+                    <div class="presupuesto_ingreso--valor" id='presupuesto'>+4,000.00</div>
+                </div>
+            </div>
+            <div class="presupuesto_egreso limpiarEstilos">
+                <div class="presupuesto_egreso--texto">Porcentaje %</div>
+                <div class="derecha limpiarEstilos">
+                    <div class="presupuesto_egreso--porcentaje" id='porcentaje'>45%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div class="contenedor">
+        <div class="presupuesto_titulo">
+            Flujo de Efectivo
+        </div>
+        <table class="table table-sm table-dark">
+            <thead>
+                <tr>
+                    <th rowspan="2" scope="col">Periodo</th>
+                    <th style="text-align: center;" colspan="12" scope="col">2021</th>
+                  </tr>
+                  <tr>
+                    <th scope="col">Enero</th>
+                    <th scope="col">Febrero</th>
+                    <th scope="col">Marzo</th>
+                    <th scope="col">Abril</th>
+                    <th scope="col">Mayo</th>
+                    <th scope="col">Junio</th>
+                    <th scope="col">Julio</th>
+                    <th scope="col">Agosto</th>
+                    <th scope="col">Septiembre</th>
+                    <th scope="col">Octubre</th>
+                    <th scope="col">Noviembre</th>
+                    <th scope="col">Diciembre</th>
+                  </tr>
+            </thead>
+            <tbody id="tablabody">
+              <tr>
+                <th  scope="row">Ingresos</th>
+              </tr>
+              <tr >
+                <th scope="row">Egresos</th>
+                
+              </tr>
+              <tr>
+                <th scope="row">Total</th>
+                
+              </tr>
+              <tr>
+                <th scope="row">Acumulado</th>
+                
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
+    <div class="contenedor limpiarEstilos row mb-5">
+        <a onclick="cargarColumna()" id="agregarColumna" class="btn btn-lg btn-primary mx-1 col-5">Agregar Columna</a>
+    </div>
+
+    <div class="contenedor">
+        <div class="presupuesto_titulo">
+            Ingresos
+        </div>
+        <table class="table table-sm table-primary">
+            <thead>
+              <tr>
+                <th scope="col">Conceptos</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Cantidad</th>
+              </tr>
+            </thead>
+            <tbody id="filas-Ingresos">
+            </tbody>
+          </table>
+    </div>
+
+    <form id='forma' onsubmit="return false;">
+        <div class="agregar">
+            <div class="agregar_contenedor">
+                <span class="fw-bold">Nuevo ingreso</span>
+                <input type='text' class='agregar_descripcion'
+                placeholder="Concepto" id='descripcion'/>
+                <input type="text" id="fechaIngreso" placeholder="Fecha" name="date1" class="tcal tcalInput agregar_descripcion">
+                <input type='number' class='agregar_valor'
+                placeholder="Valor" id='valor' step='any'/>
+                <button class='agregar_btn' onclick="agregarIngreso()">
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                </button>
+            </div>
+        </div>
+    </form>
+    
+    <div class="contenedor limpiarEstilos">
+        <div class="ingreso">
+            <h2 class='ingreso_titulo'>Ingresos añadidos</h2>
+            <div id='lista-ingresos'>
+            </div>
+        </div>
+    </div>
+
+    <div class="contenedor">
+        <div class="presupuesto_titulo">
+            Costos Directos
+        </div>
+        <table class="table table-sm table-danger">
+            <thead>
+              <tr>
+                <th scope="col">Conceptos</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Cantidad</th>
+              </tr>
+            </thead>
+            <tbody id="filas-Costos">
+              
+            </tbody>
+          </table>
+    </div>
+
+    <form id='formaEgreso' onsubmit="return false;">
+        <div class="agregar">
+            <div class="agregar_contenedor">
+                <span class="fw-bold">Nuevo Costo</span>
+                <input type='text' class='agregar_descripcion'
+                placeholder="Concepto" id='descripcionEgreso'/>
+                <input type="text" id="fechaEgreso" placeholder="Fecha" name="date2" class="tcal tcalInput agregar_descripcion">
+                <input type='number' class='agregar_valor'
+                placeholder="Valor" id='valorEgreso' step='any'/>
+                <button class='agregar_btn' onclick="agregarEgreso()">
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <div class="contenedor limpiarEstilos">
+        <div class="egreso">
+            <h2 class='egreso_titulo'>Costos Directos Añadidos</h2>
+            <div id='lista-egresos'>
+            </div>
+        </div>
+    </div>
+
+    <div class="contenedor">
+        <div class="presupuesto_titulo">
+            Gastos Administrativos
+        </div>
+        <table class="table table-sm table-danger">
+            <thead>
+              <tr>
+                <th scope="col">Conceptos</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Cantidad</th>
+              </tr>
+            </thead>
+            <tbody id="filas-Gastos">
+            
+            </tbody>
+          </table>
+    </div>
+
+    <form id='formaGasto' onsubmit="return false;">
+        <div class="agregar">
+            <div class="agregar_contenedor">
+                <span class="fw-bold">Nuevo Gasto</span>
+                <input type='text' class='agregar_descripcion'
+                placeholder="Concepto" id='descripcionGasto'/>
+                <input type="text" id="fechaGasto" placeholder="Fecha" name="date2" class="tcal tcalInput agregar_descripcion">
+                <input type='number' class='agregar_valor'
+                placeholder="Valor" id='valorGasto' step='any'/>
+                <button class='agregar_btn' onclick="agregarGasto()">
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <div class="contenedor limpiarEstilos mb-5">
+        <div class="egreso">
+            <h2 class='egreso_titulo'>Gastos añadidos</h2>
+            <div id='lista-gastos'>
+            </div>
+        </div>
+    </div>
+
+    <div class="contenedor limpiarEstilos row mb-5">
+        <a class="btn btn-lg btn-primary mx-1 col-5" href="">Guardar</a>
+        <a class="btn btn-lg btn-primary mx-1 col-5" href="">Cancelar</a>
+    </div>
+
+
+    <script src="/js/tcal.js"></script>
+    <script src='/js/Dato.js'></script>
+    <script src='/js/IngresoT.js'></script>
+    <script src='/js/EgresoT.js'></script>
+    <script src='/js/GastoT.js'></script>
+    <script src="/js/DatosDB.js"></script>
+    <script src='/js/Ingreso.js'></script>
+    <script src='/js/Egreso.js'></script>
+    <script src='/js/Gasto.js'></script>
+    <script src='/js/presupuesto.js'></script>
+    <script src='/js/O_Presupuesto.js'></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+</body>
+</html>

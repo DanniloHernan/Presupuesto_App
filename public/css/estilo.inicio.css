@@ -1,0 +1,212 @@
+
+ * {
+   padding: 0;
+   margin: 0;
+ }
+
+body{
+   overflow-x: hidden;
+   font-family: Andale Mono, monospace;
+   
+}
+
+header {
+   width: 100%;
+   min-height: 300px;
+   margin-top: 50px;
+}
+
+.divtituloheader {
+   position: relative;
+   padding-top: 10rem;
+}
+
+.divtituloheader:before {
+   content: '';
+   position: absolute;
+   top: 15px;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: url('../img/gestion_redes.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
+.divtituloheader2 {
+   content: '';
+   position: absolute;
+   top: 15px;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 50%);
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
+.navbar{
+   background-color: black;
+}
+
+
+.navbar .nav-link {
+   color: rgb(255, 255, 255);
+   margin-right: 29px;
+   transition: 0.2s;
+}
+
+a.nav-link:hover {
+   padding-bottom: 3px;
+   border-bottom: 2px solid white;
+}
+
+.btn-custom {
+   border: 2px solid #fff;
+   border-radius: 50px;
+   color: #fff;
+   background: none;
+   padding: 10px 20px;
+   margin-top: 50px;
+   font-weight: 500;
+   text-decoration: none;
+   transition: all 0.6s;
+}
+
+.dropdown-menu{
+   border: 2px solid rgb(7, 7, 7);
+   border-radius: 20px;
+   font-weight: 500;
+   text-decoration: none;
+   color: rgb(14, 13, 13);
+}
+
+.contactomenu{
+   background-color: rgb(255, 255, 255);
+}
+
+.contactomenu li a{
+   text-decoration: none;
+   padding: 5px;
+}
+
+.contactomenu li a img{
+   padding-right: 10px;
+}
+
+.btn-custom:hover {
+   background: #094faa;
+   color: #fff;
+}
+
+.navbar-fixed {
+   background-color: rgba(5, 5, 5, 0.8);
+   padding-top: 0;
+   padding-bottom: 0;
+   transition: all 0.6s;
+   box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1);
+}
+
+section {
+   padding: 30px 0;
+}
+
+.section-bg {
+   background-color: #F9F9FD;
+}
+
+.section-title {
+   text-align: center;
+   padding-bottom: 30px;
+}
+
+.section-title h2 {
+   font-size: 32px;
+   font-weight: bold;
+   text-transform: uppercase;
+   margin-bottom: 20px;
+   color: #4a3efc;
+}
+
+
+.services .icon-box {
+   padding: 33px 25px;
+   text-align: center;
+   background: #fff;
+   cursor: pointer;
+   transition: 0.5s;
+   border-radius: 15px;
+}
+
+.services .icon-box:hover {
+   box-shadow: 0px 15px 30px rgb(77 87 222 / 50%);
+}
+
+.services .icon-box .icon img {
+   width: 70px;
+}
+
+.services .icon-box h4 {
+   margin-bottom: 15px;
+   color: #0d0d0e;
+}
+
+
+iframe {
+   max-width: 100%;
+}
+
+.go-top {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: fixed;
+   bottom: 30px;
+   right: 30px;
+   width: 50px;
+   height: 50px;
+   background: #0e31cc;
+   color: white;
+   border-radius: 50%;
+   cursor: pointer;
+   z-index: 1000;
+   text-decoration: none;
+}
+
+.navbar-toggler {
+   padding: .10rem .45rem;
+   border: 1px solid white;
+}
+
+.navbar-toggler:focus {
+   outline: none;
+   box-shadow: none;
+}
+
+.navbar-toggler i.bi-list {
+   color: white;
+   font-size: 1.6rem;
+}
+
+@media (max-width: 992px) {
+   .navbar-collapse {
+      padding-bottom: 20px;
+   }
+}
+
+@media (max-width: 768px) {
+   .text-center-xs {
+      text-align: center;
+   }
+   .text-center-xs img {
+      width: 366px;
+   }
+}
+
+.icon:hover{
+   transition: all 0.8s;
+   transform: scale(1.3);
+}
+

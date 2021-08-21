@@ -1,0 +1,490 @@
+{
+	"info": {
+		"_postman_id": "2641bc0d-1d1a-41a5-8f32-34325bb2c912",
+		"name": "Presupuesto Tecla",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usuario\": \"Dannilo_25\",\r\n    \"pass\": \"teclashop#2021\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtencion de proyectos registrados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/proyectos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"proyectos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registro de nuevo proyecto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nombre\": \"Proyecto Publicidad Online Tecla\",\r\n        \"version\": \"1.1\",\r\n        \"fecha\": \"2021/08/18\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/nuevo_proyecto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"nuevo_proyecto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registro de nuevo presupuesto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nombre_presupuesto\": \"Presupuesto 2021/2022\",\r\n        \"proyecto_id\": \"b5be0740-0056-11ec-a630-251aa8e3c88a\",\r\n        \"usuario_id\": \"ccaf9f80-ff8f-11eb-9664-c7e8edb67bd8\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/nuevo_presupuesto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"nuevo_presupuesto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtencion de presupuestos registrados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/presupuesto/367603c0-006a-11ec-91f2-a35add4c1c1b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"presupuesto",
+						"367603c0-006a-11ec-91f2-a35add4c1c1b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminacion de un presupuesto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/presupuesto/49fbaf40-0069-11ec-9bf6-05d37b90313e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"presupuesto",
+						"49fbaf40-0069-11ec-9bf6-05d37b90313e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registro de un ingreso",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fecha_ingreso\":\"2021/09/19\",\r\n    \"cantidad\":\"15000\",\r\n    \"concepto\":\"Venta de Publicidad\",\r\n    \"presupuesto_id\":\"367603c0-006a-11ec-91f2-a35add4c1c1b\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/ingreso",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ingreso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminacion de un ingreso",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/ingreso/0b131460-011a-11ec-9811-e10d12749542",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ingreso",
+						"0b131460-011a-11ec-9811-e10d12749542"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registro de un costo directo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fecha_costo\":\"2021/08/20\",\r\n    \"cantidad\":\"20000\",\r\n    \"concepto\":\"Publicidad y Marketing\",\r\n    \"presupuesto_id\":\"fe93b820-01cd-11ec-9d0d-ef930b422c48\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/costo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"costo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registro de un gasto administrativo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fecha_gasto\":\"2021/08/20\",\r\n    \"cantidad\":\"5000\",\r\n    \"concepto\":\"Papeleria\",\r\n    \"presupuesto_id\":\"367603c0-006a-11ec-91f2-a35add4c1c1b\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/gasto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"gasto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Suma de costos de un presupuesto",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mes\": \"8\",\r\n    \"id_presupuesto\": \"367603c0-006a-11ec-91f2-a35add4c1c1b\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/suma_costos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"suma_costos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Suma de Ingresos de un presupuesto",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mes\": \"9\",\r\n    \"id_presupuesto\": \"367603c0-006a-11ec-91f2-a35add4c1c1b\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/suma_ingresos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"suma_ingresos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Suma de gastos de un presupuesto",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mes\": \"8\",\r\n    \"id_presupuesto\": \"367603c0-006a-11ec-91f2-a35add4c1c1b\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/suma_gastos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"suma_gastos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registro de concepto para ingresos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzdWFyaW8iOiJkYW5uMTIyNSIsInBhc3MiOiJEYW5uaWxvXzIwMjEifSwiaWF0IjoxNjI5NTA4NDM4fQ.9qwFw1JAWw2_dmzNaRtiXRtV4-hzOEN0L8BurbIkJQw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"concepto\":\"Ventas\",\r\n    \"usuario\": {\r\n                    \"usuario\": \"dann1225\",\r\n                    \"pass\": \"Dannilo_2021\"\r\n                }\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/concepto_ingreso",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"concepto_ingreso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registro de concepto para costos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzdWFyaW8iOiJkYW5uMTIyNSIsInBhc3MiOiJEYW5uaWxvXzIwMjEifSwiaWF0IjoxNjI5NTA4NDM4fQ.9qwFw1JAWw2_dmzNaRtiXRtV4-hzOEN0L8BurbIkJQw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"concepto\":\"Renta de Oficina\",\r\n    \"usuario\": {\r\n                    \"usuario\": \"dann1225\",\r\n                    \"pass\": \"Dannilo_2021\"\r\n                }\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/concepto_costo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"concepto_costo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registro de concepto para gastos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzdWFyaW8iOiJkYW5uMTIyNSIsInBhc3MiOiJEYW5uaWxvXzIwMjEifSwiaWF0IjoxNjI5NTA4NDM4fQ.9qwFw1JAWw2_dmzNaRtiXRtV4-hzOEN0L8BurbIkJQw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"concepto\":\"Papaleria\",\r\n    \"usuario\": {\r\n                    \"usuario\": \"dann1225\",\r\n                    \"pass\": \"Dannilo_2021\"\r\n                }\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/concepto_gasto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"concepto_gasto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generacion de Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usuario\" : \"dann1225\",\r\n    \"pass\": \"Dannilo_2021\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/autenticacion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"autenticacion"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

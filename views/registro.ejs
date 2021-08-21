@@ -1,0 +1,59 @@
+<%- include('./cabeceras/cab_registro')%>
+
+<body>
+
+    <div class="container d-flex justify-content-center flex-column">
+        <div>
+            <a class="d-flex justify-content-center my-3" href=""><img width="100" height="100" src="/iconos/usuario.png"></a>
+        </div>
+        
+        <div class="col-12">
+            <form action=""  id="form">
+                <div class="form"> 
+                   <h2>Registro</h2>
+       
+                   <div class="grupo">
+                       <input type="text" name="" id="name"  formnovalidate  required><span class="barra"></span>
+                       <label for="">Nombre(s)</label>
+                   </div>
+       
+                   <div class="grupo">
+                       <input type="text" name="" id="lastname"  formnovalidate  required><span class="barra"></span>
+                       <label for="">Apellidos</label>
+                   </div>
+       
+                   <div class="grupo">
+                       <input type="cumpleaños" name="" id="cumpleaños" required><span class="barra"></span>
+                       <label for="">Cumpleaños: AAAA/MM/DD</label>
+                   </div>
+       
+                   <div class="grupo">
+                       <input type="Usuario" name="" id="usuario" required><span class="barra"></span>
+                       <label for="">Nombre Usuario</label>
+                   </div>
+       
+                   <div class="grupo">
+                       <input type="email" name="" id="email" required><span class="barra"></span>
+                       <label for="">Email</label>
+                   </div>
+       
+                   <div class="grupo">
+                       <input type="password" name="" id="password" required><span class="barra"></span>
+                       <label for="">Password(Debe contener al menos un caracter especial una mayuscula y un numero)</label>
+                   </div>
+       
+       
+                   <div class="mx-auto col-6">
+                       <button class="fw-bold" id="register">Registrarse</button>
+                   </div>
+                   <!-- <button onclick="registrar()" type="submit">Registrarse</button> -->
+               </div>
+           </form>
+        </div>
+    
+    </div>
+
+    
+    <script src="/js/index.registro.js"></script>
+</body>
+</html>
